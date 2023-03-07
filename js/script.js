@@ -3,6 +3,7 @@ document.querySelectorAll(".header_text").forEach(t=>{
         document.querySelector(`#${t.dataset.block}`).scrollIntoView({ behavior: "smooth", block: "top"})
     })
 })
+
 var slideIndex = 0
 
 const blocks = document.querySelectorAll(".scrollFade")
@@ -55,7 +56,13 @@ function prev(){
     changeSlide()
 }
 
+blocks.forEach(e=>{
+    const top = e.getBoundingClientRect().top
+    if(window.innerHeight - top > 0){
 
+        e.classList.add("scrollVis")
+    }
+})
 window.addEventListener("scroll",()=>{
     blocks.forEach(e=>{
         const top = e.getBoundingClientRect().top
