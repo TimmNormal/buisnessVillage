@@ -1,6 +1,6 @@
 document.querySelectorAll(".header_text").forEach(t=>{
     t.addEventListener("click",()=>{
-        document.querySelector(`#${t.dataset.block}`).scrollIntoView({ behavior: "smooth", block: "center"})
+        document.querySelector(`#${t.dataset.block}`).scrollIntoView({ behavior: "smooth", block: "top"})
     })
 })
 var slideIndex = 0
