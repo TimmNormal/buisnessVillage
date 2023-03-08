@@ -79,7 +79,7 @@ send.addEventListener("click",async()=>{
     var isValid = true
     var message = ""
     document.querySelectorAll(".send_input").forEach(i=>{
-        message += i.value + "\n"
+        message += i.value + "<br>"
         if(!i.value){
             isValid = false
             i.animate([
@@ -115,11 +115,18 @@ send.addEventListener("click",async()=>{
             body: JSON.stringify({
                 title,
                 message,
-                to_mail:"cleveratest@gmail.com"
+                login:"bd9k2.info@gmail.com",
+                password:"isuzbhnymhqqhxkc",
+                to_mail:"info-bd9k2@yandex.ru"
             }), // данные могут быть 'строкой' или {объектом}!
             headers: {
             'Content-Type': 'application/json'
             }
             });
+            document.querySelectorAll(".send_input").forEach(i=>{
+                i.value = ""
+            })
+
+            send.innerHTML = "ОТПРАВЛЕНО"
     }
 })
