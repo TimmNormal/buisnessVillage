@@ -22,6 +22,7 @@ const SLIDES = [
     "slide2.jpg",
     "slide3.jpg",
     "slide4.jpg",
+    "slide5.jpg",
 ]
 
 
