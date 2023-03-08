@@ -73,3 +73,53 @@ window.addEventListener("scroll",()=>{
         }
     })
 })
+
+
+send.addEventListener("click",async()=>{
+    var isValid = true
+    var message = ""
+    document.querySelectorAll(".send_input").forEach(i=>{
+        message += i.value + "\n"
+        if(!i.value){
+            isValid = false
+            i.animate([
+                {
+                    transform:"translate(0,0)",
+                    borderColor:"#ff7066"
+                },
+                {
+                    transform:"translate(20px,20px)",
+                    borderColor:"#ff7066"
+                },
+                {
+                    transform:"translate(-20px,-20px)",
+                    borderColor:"#ff7066"
+                },
+                {
+                    transform:"translate(0,0)",
+                   
+                }
+            ],{
+                duration:500
+            })
+        }
+    })
+
+    if(isValid){
+        var title = "Лид форма по Buisness village"
+        console.log("D");
+        const response = await fetch(
+            "https://tools.cleverra.ru/send_mail", {
+            method: 'POST', // или 'PUT'
+            mode: 'cors',
+            body: JSON.stringify({
+                title,
+                message,
+                to_mail:"cleveratest@gmail.com"
+            }), // данные могут быть 'строкой' или {объектом}!
+            headers: {
+            'Content-Type': 'application/json'
+            }
+            });
+    }
+})
