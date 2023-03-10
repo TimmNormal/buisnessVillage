@@ -25,7 +25,10 @@ const SLIDES = [
     "slide5.jpg",
 ]
 
-
+SLIDES.forEach(s=>{
+    im = document.createElement("img")
+    im.src = "images/"+ s
+})
 
 function changeSlide (){
     slider.animate([
